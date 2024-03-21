@@ -2,8 +2,18 @@
 import React from 'react';
 import LoginButton from "../LoginButtons/Login";
 import OnlinePlayers from '../OnlinePlayers/OnlinePlayers';
+import firebase from 'firebase/compat/app';
+import 'firebase/firestore'
+import 'firebase/compat/auth';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+
+
 
 function homePage() {
+  
   const playersOnline = 0;
 
   return (
@@ -16,8 +26,8 @@ function homePage() {
             <h1 className="self-stretch text-center  max-md:max-w-full max-md:text-4xl"> RoboBackgammon </h1>
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4304f11bd61d8b96535753cd47b5491c0ab25af6d9a25f25ddbc6cfc5793b00e?apiKey=1477cbc897df4fa28e1ddba6fd23de63&" alt="RoboBackgammon logo" className="mt-4 max-w-full aspect-[14.29] w-[872px]" />
             <div className="flex gap-5 mt-8 max-w-full text-2xl font-extrabold text-black w-[872px] max-md:flex-wrap">
-              <LoginButton provider="Facebook" icon="https://cdn.builder.io/api/v1/image/assets/TEMP/ff04048608b9772f7f1c4bfddce262e913dcf813ade53c88b598c9204af851f4?apiKey=1477cbc897df4fa28e1ddba6fd23de63&" />
-              <LoginButton provider="Google" icon="https://cdn.builder.io/api/v1/image/assets/TEMP/31652264e0e148bf181f3da5623ecdb0e908787ce9f740bc69b2fe9832392860?apiKey=1477cbc897df4fa28e1ddba6fd23de63&" />
+              <LoginButton Provider="Facebook" icon="https://cdn.builder.io/api/v1/image/assets/TEMP/ff04048608b9772f7f1c4bfddce262e913dcf813ade53c88b598c9204af851f4?apiKey=1477cbc897df4fa28e1ddba6fd23de63&" />
+              <LoginButton  Provider="Google" icon="https://cdn.builder.io/api/v1/image/assets/TEMP/31652264e0e148bf181f3da5623ecdb0e908787ce9f740bc69b2fe9832392860?apiKey=1477cbc897df4fa28e1ddba6fd23de63&" />
             </div>
             <OnlinePlayers count={playersOnline} />
           </div>
@@ -27,5 +37,7 @@ function homePage() {
     </>
   );
 }
+
+
 
 export default homePage;
