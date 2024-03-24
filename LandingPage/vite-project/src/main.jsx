@@ -6,9 +6,9 @@ import HomePage from './components/HomePage/HomePage.jsx';
 import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
 import { createRoot } from 'react-dom/client';
 
-import firebase from 'firebase/compat/app';
+//import firebase from 'firebase/compat/app';
 import 'firebase/firestore'
-import 'firebase/compat/auth';
+//import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 

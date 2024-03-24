@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "robobackgammon",
+  "private_key_id": "8d304ede1e6c9018146a6ec03fb0a814b539876f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCUUb1Gisiaz2Ue\nkZdoJ5toK36hQ0JLL3TY8FdPpd7xzCk4NSb4rge2wkd78Zea3c/h02pM7v7N2Jmq\n6ZF/c4kMp3tPAsPjAOPvxFS2tdzRCn1PMb7KuMxgpGZR7WOlBgga0xREdRb1mE6l\nJAReC93uvu9bBHJpKDtGWEVhsVh72+SWR+dpGVWQD2KASa1iscEyKvrl9mD0X7rH\nW4UzEWLl7chR22Y0B782T6Ax9Uf5JLhcF/7VY72OWOPXD+igrS3SeZmQmvRc8lYj\nxP+UFSs47F5cHn4Ykr8a4zi1k1ZW+JkdzNgPhnkCmjSrtMhTtXHSPkrORK9ih+t1\nlZ0GqAgnAgMBAAECggEASV2DXBzzLMyQzsWimKUa1LTLDvbHmIwxZsu/zIiWVpGw\nA/sau2DONQM1u+Pdo3+7wA9FIigIBwdwv5+IVnxuWsGPl54dCjEbDrNVWglsYESp\nhl5razhs9BLt//GGXA83PBmUCWbHxBUiNcKynFiPX3S3zhRNiaGabGnma/P++kii\nKJZQAk+qvZf1kYXuhMC+4c7mfqCo+0NnDcELcN5Aomp5YzZrvZdoqO5aM/z8QRqm\nwBG1WGjZhtKEPjjezrmfID4mtK5MPdL4ku9jgVC9Ux80zg08kZrw+O/ZXHGrOw5C\neVXB3QqO10uQvRSre5l+OpRoi2ITO4TGvsSIMp/6yQKBgQDRmeqOPTlWcNSnh3av\nkG7/zafV6BUlzha204RDGvkT/xvWA/ZeA8tlV3ZTaCwowpLZLsFdrPWo0fHeqd7T\nYpBS15BhJ0xEwNgD/F4jGrjyiR++Ji35Mggxcs9PnYGbtkUS3Z4QiHUqrFAwIETa\ndbZk85zAHRIGgb4/lb2wFTfgqQKBgQC1JvsZ84NPNwZ9mc7PSXel9Uf/bPUVSsYq\nAr3dKudtCwTaFzexojMeFXTOVtoGAmAjSGPJW0TnGxxFXHhRPjhKZ0pwutv9sq+8\nf8r5vBNrDPy9GoppDp1DvOlQ3KDnVKlTQ2APEmDvnzntatDI9WQpFLxsDLT/jO8J\nqpWINUiUTwKBgQCvm4EFAw6S+Z1xbvFlTmFxOGCxuuxc7Dnjm3toraSZuFceC9vS\nEOPMWGbuooy86agXBjFDxrFba+p1X2UtPZsljS2N+FrSD6/sRvin+K+TpIdPzLUf\n32c15rcCQThhuWhN0heoSmvAAPZ+G8sULSNPmTtvSevcP7+hjleKu3xBYQKBgQCU\nevf0JHGreymZx3kI1Gn6oFo8FT2pDxnwE0E2R9Vavl5iuAcRVSZa8TFFc1DO/iF4\nqfwIbgPC/ailfY6s4LfY3GLalX59qnl6orBnE+5Cn2mFQnzScYUboXsHqV9FXVJQ\niffxQporrjIX1KZ/IQvQ1EtAsQWmNQk0vhpEg5AS5wKBgQCfKacXEQv8GyUwN9Ty\n+7N91ZWdvbI76p5+DNGAgGZw6P5/lxplfp16TQoLfm+hlvtVmIJ6dVWvDS86ZdUy\nbtudW39vyJ7rt79BCYFqiLHX1+Ga5s/FL2BD6OH51W6fCXSGnqkB+dDJI/moqMsx\nLae026JjCjlDbSXQzzhbzGhMKQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-amd72@robobackgammon.iam.gserviceaccount.com",
+  "client_id": "107709262785463637165",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-amd72%40robobackgammon.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

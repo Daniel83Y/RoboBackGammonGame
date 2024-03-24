@@ -1,12 +1,12 @@
 import * as React from "react";
-import PlayerInfo from "../PlayerInfo/PlayerInfo"; 
+// import PlayerInfo from "../PlayerInfo/PlayerInfo";
 
 function LoggedInPage() {
   const players = [
     {
       name: "Player Name",
       avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/9f833731123ac1f584b47f7c0348eeac8fa791ab7c4c97d4b7a994d14594b71e?apiKey=1477cbc897df4fa28e1ddba6fd23de63&",
-      status: "https://cdn.builder.io/api/v1/image/assets/TEMP/de6d884f786d1457bf91455172c1b84047b5208b782bef08200c77e8a5fab281?apiKey=1477cbc897df4fa28e1ddba6fd23de63&",
+      status: "https://cdn.builder.io/api/v1/image/assets/TEMP/5345b0f54912d4aecfc1dcdded0067f678151e1ed96583ddd704ffc1f77e50e3?apiKey=1477cbc897df4fa28e1ddba6fd23de63&",
     },
     // Add more player objects as needed
   ];
@@ -19,14 +19,14 @@ function LoggedInPage() {
           <h1 className="flex-auto self-stretch my-auto text-6xl  max-md:max-w-full max-md:text-4xl">
             RoboBackgammon
           </h1>
-          {players.map((player, index) => (
-            <PlayerInfo
-              key={index}
-              playerName={player.name}
-              playerAvatar={player.avatar}
-              playerStatus={player.status}
-            />
-          ))}
+          {/* {players.map((player, index) => (
+            // <PlayerInfo
+            //   key={index}
+            //   playerName={player.name}
+            //   playerAvatar={player.avatar}
+            //   playerStatus={player.status}
+            // />
+          // ))} */}
         </header>
       </div>
     </div>
