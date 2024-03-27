@@ -1,19 +1,31 @@
 // RoboBackgammonLandingPage.js
 import React from 'react';
-import LoginButton from "../LoginButtons/Login";
+import LoginButton from "../Buttons/Login";
 import OnlinePlayers from '../OnlinePlayers/OnlinePlayers';
 //import firebase from 'firebase/compat/app';
 import 'firebase/firestore'
 // import 'firebase/compat/auth';
-
+// import { useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 
 
-function homePage({user}) {
-  
+function homePage() {
+  // preventDefault();
+  //   const history = useHistory();
+
+  // // const handleNavigate = () => {
+  // //   if (user) {
+  // //     // User exists, navigate to the next page
+  // //     console.log('User exists');
+  // //     history.push('/LoggedInPage');
+  // //   } else {
+  // //     // User does not exist, handle accordingly (e.g., show a message)
+  // //     console.log('User does not exist');
+  // //   }
+  // // };
   const playersOnline = 0;
   return (
     <>

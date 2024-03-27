@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect,createContext, useState } from 'react';
 import { initializeApp } from 'firebase/app';
-import { 
-    getFirestore,collection,getDocs
- } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
 import 'firebase/auth';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { doc, setDoc } from 'firebase/firestore';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage.jsx';
 import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-//import require from 'firebase/require';
-
-// import { getAuth, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import ChatProvider from './components/Chat/ChatComp.jsx';
+// import {UserContextProvider} from './components/user-context.jsx';
+import { UserContextProvider } from './components/context/user-context.jsx';
+// Initialize Firebase app
 const app = initializeApp({
   apiKey: "AIzaSyCZ6pMdRgKENnl5mQdO3sHJnEz4rkNi9Lw",
   authDomain: "robobackgammon.firebaseapp.com",
@@ -24,70 +25,116 @@ const app = initializeApp({
   measurementId: "G-46Q8BLR562"
 });
 
-
-
-//INIT FIREBASE APP
-
-//init firebase app
-const db = getFirestore();
-// collection ref
-const colRef = collection(db, 'PlayerDemo');
-
-//get collection data
-getDocs(colRef).then((snapshot) => {
-    let players = [];
-  snapshot.docs.forEach((doc) => {
-    players.push({ ...doc.data(), id: doc.id });
-  }) 
-  console.log(players);
-})
-.catch((err) => {
-  console.log(err.message);
-})
+// Initialize Firestore
+export const db = getFirestore();
+export const colRef = collection(db, 'PlayerStats');
 export const auth = getAuth(app);
-// const analytics = getAnalytics(app);
-// const {Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
-// let admin = require("firebase-admin");
-// const firebaseApp = admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
-
-// const firestoreInstance = getFirestore(firebaseApp);
-
-// const serviceAccount = require('./RoboBackGammonGame/LandingPage/vite-project/key.json');
-// const {  applicationDefault, cert } = require('firebase-admin/app');
-// const auth = getAuth(firebaseApp);
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
-
-// const db = getFirestore();
-// const auth = getAuth();
+// export const authuser=null;
+// Get collection data
 
 
+// async function addDataToFirestore() {
+//   const data = {
+//     PlayerStats: { displayName: 'Tamir' },
+//     PlayerStats: { displayName: 'Almog' }
+//   };
 
 
-function App() {
-//   const [user] = useAuthState(auth);
-//   if (user) {
-//     console.log(user);
+//   try {
+//   await Promise.all(data.map(async (docData) => {
+//     await addDoc(collection(db, "PlayerStats"), docData);
+//   }));
+//   console.log('Documents successfully written!');
+// } catch (error) {
+//   console.error('Error writing documents: ', error);
+// }
+// }
+
+// export const updateColRef = async () => {
+//   try {
+//     const res = await db.collection('PlayerStats').add({
+//       displayName: 'Tamir',
+//     });
+//     console.log('Added document with ID: ', res.id);
+//   } catch (error) {
+//     console.error('Error adding document: ', error);
 //   }
+// };
+
+export const updateColRef = async (displayname, Playericon,playeremail) => {
+  const data = {
+    displayName: displayname,
+    PlayerIcon: Playericon,
+    email: playeremail
+  };
+
+  try {
+    await setDoc(doc(db, "PlayerStats", displayname), data);
+    console.log('Document successfully updated!');
+  } catch (error) {
+    console.error('Error updating document: ', error);
+  }
+}; 
+// export const UserContext = createContext();
+function App() {
+ 
+
+   //////////////////////////////////////////////////////////////////////////
+  // useEffect(() => {
+  //  let user = auth.currentUser;
+  //   console.log("unsubscribe to User:", user);
+  // const unsubscribe = onAuthStateChanged(auth, user => {
+  //     if (user) {
+  //       console.log("the User that is signed in: \n", user);
+  //     } else {
+  //       // User is signed out
+  //       console.log("User is now signed out");
+  //     }
+  //   });
+  //   // return () => unsubscribe();
+  // }, []);
+// Subscribe to authentication state changes
+//////////////////////////////////////////////////////////////////////////////
+// let authuser=null;
+// 
+
+/////////////////////////////////////////////////////////////////////////////
+// let authuser;
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//      authuser=user;
+//      console.log("the User that is signed in: \n", user);
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//     // const uid = user.uid;
+//     // ...
+//   } else {
+//     // User is signed out
+//     console.log("User is now signed out");
+//     // ...
+//   }
+// });
+////////////////////////////////////////////////////////////////////
   const router = createBrowserRouter([
     {
       path: '/',
-      element:  <HomePage />,
-      // user ? <LoggedInPage /> :
+      element: <HomePage />,
     },
     {
       path: '/LoggedInPage',
       element: <LoggedInPage />,
     }
+    , {
+    path:'/Chat',
+    element: <ChatProvider />
+    }
   ]);
 
   return (
+    <UserContextProvider>
       <RouterProvider router={router} />
+    </UserContextProvider>
   );
 }
- 
+
 export default App;
-// export {auth};

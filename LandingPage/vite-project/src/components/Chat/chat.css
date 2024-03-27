@@ -1,0 +1,164 @@
+/* Center the chat container vertically and horizontally */
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+/* Styles for the chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 820px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* Increased border-radius for rounded edges */
+}
+.Warcontainer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* Increased border-radius for rounded edges */
+}
+
+/* Styles for the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 12px;
+    border-top-left-radius: 20px;
+    /* Rounded top left corner */
+    border-top-right-radius: 20px;
+    /* Rounded top right corner */
+}
+
+/* Styles for user information */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 12px;
+}
+
+.chat-image {
+    width: 84px;
+    height: 64px;
+    border-radius: 8px;
+}
+
+/* Styles for the messages container */
+.messages-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #333;
+}
+
+.messages-scroll {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 16px;
+}
+
+/* Styles for individual messages */
+/* Styles for individual messages */
+.message {
+    font-size: 1.2rem;
+    position: relative;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    min-width: 72px;
+    /* Adjust to fit 4 characters */
+}
+.timestamp {
+    position: absolute;
+    right: 5px;
+    font-size: 0.8rem;
+    color: #999;
+    min-width: 40px;
+    max-width: calc(100% - 8px);
+    bottom : -12px;
+    /* Adjust as needed to prevent overflow */
+}
+.message + .message.user-message{
+    margin-top: 8px;
+}
+
+.user-message,
+.other-message {
+    border-radius: 20px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.user-message {
+    background-color: #390075;
+    color: #ffffff;
+    align-self: flex-end;
+    
+    }
+
+
+.other-message {
+    background-color: #000000;
+        color: #ffffff;
+        align-self: flex-start;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 12px;
+    border-bottom-left-radius: 20px;
+    /* Rounded bottom left corner */
+    border-bottom-right-radius: 20px;
+    /* Rounded bottom right corner */
+}
+
+/* Styles for the message input */
+.message-input {
+    flex-grow: 1;
+    padding: 12px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+/* Styles for the send button */
+.send-button {
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Styles for the send icon */
+.send-icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}

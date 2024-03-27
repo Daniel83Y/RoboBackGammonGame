@@ -1,10 +1,12 @@
 import React from 'react';
 import App from './App.jsx';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+// import ReactDOM from 'react-dom';
+
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'; // Import BrowserRouter directly
 import HomePage from './components/HomePage/HomePage.jsx';
 import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
-import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
 
 //import firebase from 'firebase/compat/app';
 import 'firebase/firestore'
@@ -37,7 +39,9 @@ function checkUser() {
 
 // ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+const root = createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
     <App />
