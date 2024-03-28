@@ -8,15 +8,17 @@ const UserContext = createContext(null);
 export  function UserContextProvider({children}) {
     const [user,setUser]=useState(null);
     useEffect(() => {
-const unsubscribe = auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log("the User that is signed in: \n", user);
-    setUser(user);
+      console.log("usercontext start");
+const unsubscribe = auth.onAuthStateChanged(User => {
+  if (User) {
+    console.log("the User that is outhenticated in: \n", User);
+    setUser(User);
     //  authuser=user;
   } else {
     // User is signed out
     console.log("User is now signed out");
   }
+  console.log("usercontext end:",user);
 });
 // Unsubscribe from authentication state changes when the component unmounts
   return () => unsubscribe();
@@ -26,6 +28,7 @@ const unsubscribe = auth.onAuthStateChanged(user => {
       {children}
     </UserContext.Provider>
   );
+  co
 }
 
 export function useUserContext() {

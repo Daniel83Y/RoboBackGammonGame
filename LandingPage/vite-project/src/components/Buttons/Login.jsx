@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { getDocs,addDoc, collection } from 'firebase/firestore';
 import { db, colRef} from '../../App.jsx';
 // import { useUserContext } from "../context/user-context.jsx";
-import { addUserForm } from '../PlayerInfo/PlayerInfo.jsx';
-import { getCurrentUserFromCollection } from '../PlayerInfo/PlayerInfo.jsx';
+import { addUserForm,getCurrentUserFromCollection,onlineStateToggle } from '../PlayerInfo/PlayerInfo.jsx';
 function LoginButton({Provider, icon}) {
     
     const navigate = useNavigate();
@@ -48,8 +47,10 @@ const signInWithGoogle = async () => {
         // const { displayName, photoURL, email } = result.user;
         if (await getCurrentUserFromCollection(result.user.email)) {
             console.log("User already exists, signing in.");
+            await onlineStateToggle(result.user.displayName);
         } else {
             await addUserForm(); // Wait for user information to be added to Firestore
+
         }
         navigate("/LoggedInPage");
     } catch (error) {

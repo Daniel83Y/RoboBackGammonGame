@@ -6,21 +6,28 @@ import { signOut} from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
 import { getDocs,addDoc, collection } from 'firebase/firestore';
 import { db, colRef} from '../../App.jsx';
-import {deleteUserFromCollection} from '../PlayerInfo/PlayerInfo.jsx';
-import {useCurrentUserContext} from "../context/currentuser-context.jsx";
+import {deleteUserFromCollection,onlineStateToggle} from '../PlayerInfo/PlayerInfo.jsx';
+import { useUserContext } from "../context/user-context.jsx";
+// import {auth} from '../../App.jsx';
+// import {currentUser} from 'firebase/auth';
 function SignOutButton() {
-    const {currentUser} = useCurrentUserContext();
-    const user =currentUser;
+    const {user,setUser} = useUserContext();
+// user=auth.currentUser;
     const navigate = useNavigate();
 
     const SignOut = async () => {
     try {
-        console.log(currentUser.displayName);
-        if (currentUser && currentUser.displayName.includes('Anonymous')) {
+        console.log(user);
+        if (user && user.displayName.includes('Anonymous')) {
             await signOut(auth);
-            await deleteUserFromCollection(currentUser.displayName); // Await the deleteUserFromCollection function
+            await deleteUserFromCollection(user.displayName); // Await the deleteUserFromCollection function
             console.log("Signout Successful");
         } 
+        else {
+            await onlineStateToggle(user.displayName);
+            await signOut(auth);
+          
+        }
         navigate("/");
     } catch (error) {
         console.error("Sign-out error:", error);
