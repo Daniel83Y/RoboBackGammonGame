@@ -11,8 +11,7 @@ import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import ChatProvider from './components/Chat/ChatComp.jsx';
-// import {UserContextProvider} from './components/user-context.jsx';
-import { UserContextProvider } from './components/context/user-context.jsx';
+// import { UserContextProvider } from './components/context/user-context.jsx';
 // Initialize Firebase app
 const app = initializeApp({
   apiKey: "AIzaSyCZ6pMdRgKENnl5mQdO3sHJnEz4rkNi9Lw",
@@ -61,20 +60,9 @@ export const auth = getAuth(app);
 //   }
 // };
 
-export const updateColRef = async (displayname, Playericon,playeremail) => {
-  const data = {
-    displayName: displayname,
-    PlayerIcon: Playericon,
-    email: playeremail
-  };
+////////////////////////////////////////add new player to collection////////////////////////////////////////
 
-  try {
-    await setDoc(doc(db, "PlayerStats", displayname), data);
-    console.log('Document successfully updated!');
-  } catch (error) {
-    console.error('Error updating document: ', error);
-  }
-}; 
+
 // export const UserContext = createContext();
 function App() {
  
@@ -129,11 +117,11 @@ function App() {
     element: <ChatProvider />
     }
   ]);
-
+    {/* </UserContextProvider> */}
   return (
-    <UserContextProvider>
+    // <UserContextProvider>
       <RouterProvider router={router} />
-    </UserContextProvider>
+
   );
 }
 

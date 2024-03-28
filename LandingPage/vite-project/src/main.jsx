@@ -13,18 +13,23 @@ import 'firebase/firestore'
 //import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
-function checkUser() {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log('User logged in:', user);
-      return user;
-    } else {
-      console.log('User logged out');
-    }
+import { UserContextProvider } from './components/context/user-context.jsx';
+import {CurrentUserContextProvider} from './components/context/currentuser-context.jsx';
+////////////////////////////////////////////////////////////////////////////////
+// function checkUser() {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       console.log('User logged in:', user);
+//       return user;
+//     } else {
+//       console.log('User logged out');
+//     }
     
-  });
-}
+//   });
+// }
+//////////////////////////////////////////////////////////////////////////////
+
+
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
@@ -44,7 +49,11 @@ const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <App />
+    <UserContextProvider>
+     <CurrentUserContextProvider>
+         <App />
+       </CurrentUserContextProvider>
+    </UserContextProvider>
   </React.StrictMode>
 );
 

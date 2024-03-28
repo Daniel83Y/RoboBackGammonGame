@@ -1,23 +1,23 @@
 import React,{useState} from 'react';
-
+// import {handleDeny} from "./ChatComp.jsx"
 import './War.css';
 
 function WarDeclaration({ handleDeny }) {
   return (
     <div className="my-section">
+      <div className="my-header">
       <h1 className="my-heading">
         Daniel has declared war on you
       </h1>
+      </div>
       <div className="my-buttons">
         {/* Use button element for Battle */}
         <button className="my-button my-button-battle">
           Battle
-          <div className="my-bar my-bar-battle"></div>
         </button>
         {/* Use button element for Denied */}
         <button className="my-button my-button-denied" onClick={handleDeny}>
-          Denied
-          <div className="my-bar my-bar-denied"></div>
+          Deny
         </button>
       </div>
     </div>

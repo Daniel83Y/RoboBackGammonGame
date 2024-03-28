@@ -1,44 +1,46 @@
 import * as React from "react";
 import SignOutButton from "../Buttons/SignOut.jsx";
 import addUserForm from "../PlayerInfo/PlayerInfo.jsx";
-import { auth,updateColRef  } from '../../App.jsx';
+import { auth } from '../../App.jsx';
 import { useEffect, useState } from "react";
 // import { updateColRef } from "../../App.jsx";
-import {getCurrentUserFromCollection} from "../PlayerInfo/PlayerInfo.jsx";
+// import {getCurrentUserFromCollection} from "../PlayerInfo/PlayerInfo.jsx";
 // import { useContext } from 'react';
 // import { UserContext } from "../../App.jsx";
 // import {useUserContext} from "../../context/UserContext.jsx";
-import { useUserContext } from "../context/user-context.jsx";
+import {useCurrentUserContext} from "../context/currentuser-context.jsx";
 function LoggedInPage() {
   
   // let user=useContext(UserContext);
-  const {user,setUser} = useUserContext();
-   const [currentUser, setCurrentUser] = useState(null);
+  // const {user,setUser} = useUserContext();
+const {currentUser} = useCurrentUserContext();
+
+  //  const [currentUser, setCurrentUser] = useState(null);
   // let currentUser = user;
   // setCurrentUser(user);
-console.log("the user trom the context is:", user);
-  useEffect(() => {
-    console.log("inside use effect");
-const fetchUserData = async () => {
+console.log("the currentuser from the context is:", currentUser);
+//   useEffect(() => {
+//     console.log("inside use effect");
+// const fetchUserData = async () => {
   
-    if (user) {
-      const useremail = user.email;
+//     if (user) {
+//       const useremail = user.email;
 
-        const userData = await getCurrentUserFromCollection(useremail);
-        console.log("the new Current user from the collection  is:", userData);
+//         const userData = await getCurrentUserFromCollection(useremail);
+//         console.log("the new Current user from the collection  is:", userData);
 
-        if (userData) {
-          setCurrentUser (userData);
-        }
-      }
-      else{
-        console.log("no user");
-      }
-    };
-  console.log("the user in the context is:", user);
-  console.log("the current user is:", currentUser);
-     fetchUserData();
-  }, [user]);
+//         if (userData) {
+//           setCurrentUser (userData);
+//         }
+//       }
+//       else{
+//         console.log("no user");
+//       }
+//     };
+//   console.log("the user in the context is:", user);
+//   console.log("the current user is:", currentUser);
+//      fetchUserData();
+//   }, [user]);
 
   // console.log("the current user photo is:", currentUser.photoURL);
 //   return (

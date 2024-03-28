@@ -54,9 +54,11 @@
 
 .username {
     font-size: 2rem;
-    font-weight: bold;
     color: #fff;
     margin-left: 12px;
+    font-family: "Rubik Mono One"   ;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+
 }
 
 .chat-image {
@@ -70,25 +72,35 @@
     flex-grow: 1;
     overflow-y: auto;
     background-color: #333;
+
 }
 
 .messages-scroll {
     display: flex;
     flex-direction: column-reverse;
     padding: 16px;
+    
 }
 
 /* Styles for individual messages */
 /* Styles for individual messages */
+/* Styles for individual messages */
 .message {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-family: 'Rubik';
+    /* Add your desired font */
     position: relative;
     padding: 12px;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    /* Increase the margin to create a bigger gap */
     min-width: 72px;
+    max-width: 70%;
+    word-wrap: break-word;
+    
     /* Adjust to fit 4 characters */
 }
+
 .timestamp {
     position: absolute;
     right: 5px;
@@ -96,7 +108,7 @@
     color: #999;
     min-width: 40px;
     max-width: calc(100% - 8px);
-    bottom : -12px;
+    bottom: -20px;
     /* Adjust as needed to prevent overflow */
 }
 .message + .message.user-message{
@@ -107,7 +119,8 @@
 .other-message {
     border-radius: 20px;
     padding: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 1.3rem;
+
 }
 
 .user-message {
@@ -145,6 +158,7 @@
     border: none;
     border-radius: 8px;
     margin-right: 8px;
+    
 }
 
 /* Styles for the send button */
