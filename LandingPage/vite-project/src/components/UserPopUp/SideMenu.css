@@ -1,0 +1,99 @@
+/* Styles for the sidebar menu */
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* Position the sidebar at the most right */
+    background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/4659f1cf8765db6080a4d4c89846996b70b0324c53b064a097e98a7caca1222a?apiKey=1477cbc897df4fa28e1ddba6fd23de63&");
+    background-size: cover;
+    /* Ensure the background image covers the entire sidebar */
+    backdrop-filter: blur(5px);
+    /* Add a blur effect to the background */
+    z-index: 1000;
+    /* width: 250px; */
+    max-width: 250px;
+    /* Added max-width */
+    /* Set initial width */
+    transition: max-width 0.3s ease;
+     
+}
+
+.side-menu.closed {
+    max-width: 0;
+    /* Changed width */
+}
+.side-menu.open {
+    max-width: 250px;
+    /* Changed width */
+}
+
+/* Styles for the menu background */
+.menu-background {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styles for the menu content */
+.menu-content {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 14px;
+    width: 100%;
+    aspect-ratio: 0.28;
+}
+
+/* Styles for the menu logo */
+.menu-logo {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    /* Adjust the bottom position */
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    z-index: 10;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+/* Styles for the menu navigation */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for the menu items */
+.menu-item {
+    position: relative;
+    margin-top: 20px;
+    padding: 36px;
+    font-size: 31px;
+    text-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);
+    /* Dark text shadow */
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+
+    /* White text color */
+}
+/* button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+} */
+.menu-item:hover,
+.menu-item:focus {
+
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  /* transform: translateY(-0.25em); */
+   /* Dark text shadow */
+    color: #000000;
+    font-weight: bold;
+}

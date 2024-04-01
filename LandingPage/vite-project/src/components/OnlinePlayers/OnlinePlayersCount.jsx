@@ -9,5 +9,15 @@ function OnlinePlayers({ count }) {
     </div>
   );
 }
+// OnlinePlayers.js
+export function OnlinePlayersNav({ count }) {
+  return (
+    <div className="font-Stick flex items-center">
+      <p className="text-5xl mr-2">Players Online:</p>
+      <p className="text-5xl">{count}</p>
+    </div>
+  );
+}
+
 
 export default OnlinePlayers;

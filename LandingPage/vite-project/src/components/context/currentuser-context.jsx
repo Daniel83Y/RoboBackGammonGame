@@ -5,7 +5,7 @@ import { getCurrentUserFromCollection } from '../PlayerInfo/PlayerInfo.jsx';
 
 const CurrentUserContext = createContext(null);
 export  function CurrentUserContextProvider({children}) {
-    const {user,setUser} = useUserContext();
+     const {user,setUser} = useUserContext();
     const [currentUser,setCurrentUser]=useState(null);
 
      useEffect(() => {
@@ -13,6 +13,7 @@ export  function CurrentUserContextProvider({children}) {
 const fetchUserData = async () => {
   
     if (user) {
+      console.log("the user is:", user);
         const userData = await getCurrentUserFromCollection(user.email);
         console.log("the new Current user from the collection  is:", userData);
 

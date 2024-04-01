@@ -1,6 +1,7 @@
 import { colRef,auth,db} from '../../App.jsx';
 import { getDocs, getDoc, doc ,setDoc,deleteDoc,updateDoc} from "firebase/firestore";
 import { collection } from 'firebase/firestore';
+import { memo } from 'react';
 // import {isAnonymous} from 'firebase/auth';
 // import {useUserContext} from "../../context/UserContext.jsx";
 // let id =0;
@@ -18,9 +19,9 @@ export const addUserForm = async () => {
         {
            console.log("Anonymous user");
            user.displayName = `Anonymous${crypto.randomUUID().slice(1,5)}`;
-           user.email = `${user.displayName}@Email.com`;
+           user.email = `${user.displayName}@Email.com`;  
            updateColRef(user.displayName,"https://firebasestorage.googleapis.com/v0/b/robobackgammon.appspot.com/o/image%202.png?alt=media&token=af25d686-29d9-4eb0-bed4-0015a99954a6",user.email,true);
-           
+           console.log(user);
         }
     else {   
            updateColRef(user.displayName, user.photoURL,user.email,true);
@@ -118,22 +119,22 @@ export const getCurrentUserFromCollection = async (email) => {
 //     }
 // };
 
-export const onlineStateToggle = async (displayname) =>{
- const docref = doc(db, 'PlayerStats', displayname);
-  const docSnap = await getDoc(docref); // Get the document snapshot
+// export const onlineStateToggle = async (displayname) =>{
+//  const docref = doc(db, 'PlayerStats', displayname);
+//   const docSnap = await getDoc(docref); // Get the document snapshot
   
-  if (docSnap.exists()) {
-    const currentOnlineState = docSnap.data().onlineState;
-    await updateDoc(docref, {
-      onlineState: !currentOnlineState})
-  .then(() => {
-    console.log('onlineState successfully updated!');
-  })
-  .catch((error) => {
-    console.error('Error deleting document:', error);
-  });
-}
-}
+//   if (docSnap.exists()) {
+//     const currentOnlineState = docSnap.data().onlineState;
+//     await updateDoc(docref, {
+//       onlineState: !currentOnlineState})
+//   .then(() => {
+//     console.log('onlineState successfully updated!');
+//   })
+//   .catch((error) => {
+//     console.error('Error deleting document:', error);
+//   });
+// }
+// }
 ///delete doc from collection by user name
 export const deleteUserFromCollection = async (displayname) => {
   //  await db.colRef('PlayerStats').doc({displayname}).delete();
@@ -160,4 +161,5 @@ export const CurrenlyOnlineAndOffline = async () => {
 
 function PlayerInfo() {}
 
-export default PlayerInfo;
+export default PlayerInfo ;
+// export default memo(PlayerInfo); // eslint-disable-line PlayerInfo;

@@ -11,6 +11,7 @@ import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import ChatProvider from './components/Chat/ChatComp.jsx';
+import {memo} from 'react'
 // import { UserContextProvider } from './components/context/user-context.jsx';
 // Initialize Firebase app
 const app = initializeApp({
@@ -125,4 +126,5 @@ function App() {
   );
 }
 
+// export default memo(App);
 export default App;

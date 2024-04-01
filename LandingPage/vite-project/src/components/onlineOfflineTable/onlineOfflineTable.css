@@ -1,0 +1,40 @@
+/* onlineOfflineTable.css */
+
+.table {
+    width: 100%;
+    /* Set table width to 100% */
+    border-collapse: collapse;
+    /* Collapse table borders */
+}
+
+.th {
+    padding: 8px;
+    /* Add padding to table header cells */
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    /* Add border to table header cells */
+}
+
+.tbody {
+    border: 1px solid #000;
+    /* Add border to table body */
+}
+
+.tr {
+    border: 1px solid #000;
+    /* Add border to table rows */
+}
+
+.image {
+    max-width: 3;
+}
+
+.td {
+    padding: 8px;
+    /* Add padding to table cells */
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #000;
+    /* Add border to table cells */
+}
