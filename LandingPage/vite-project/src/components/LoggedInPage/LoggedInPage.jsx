@@ -2,22 +2,40 @@ import * as React from "react";
 import addUserForm from "../PlayerInfo/PlayerInfo.jsx";
 import { useCurrentUserContext } from "../context/currentuser-context.jsx";
 import { usePlayersStateListsContext } from "../context/playersStateLists-context.jsx";
+import { useSelectedUserContext } from '../context/selectedUser-context';
 import { OnlinePlayersNav } from '../OnlinePlayers/OnlinePlayersCount.jsx';
 import OnlineOfflineTable from "../onlineOfflineTable/onlineOfflineTable.jsx";
 import SideMenu from "../UserPopUp/SideMenuPop.jsx"; // Import the SideMenu component
+import { auth } from '../../App.jsx';
 import { useEffect } from "react";
+import { db } from "../../App.jsx";
+import { collection, query, onSnapshot } from 'firebase/firestore';
+import { onAuthStateChanged } from "firebase/auth";
 
 
 function LoggedInPage() {
-  
+  const { selectedUser } = useSelectedUserContext();
   const { currentUser } = useCurrentUserContext();
   const { onlineList, offlineList,refresh,setRefresh } = usePlayersStateListsContext();
   const playersOnline = onlineList.length;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false); // State to manage menu visibility
 console.log(currentUser);
+// useEffect(() => {
+
+//     setRefresh(!refresh ); // Triggers re-render
+// },[]);
 useEffect(() => {
-  setRefresh(!refresh);
-},[]);
+  console.log("logged in page selected user", selectedUser);
+}, [selectedUser]);
+
+useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+        // Trigger re-render whenever authentication state changes
+        setRefresh(!refresh);
+    });
+
+    return () => unsubscribe();
+}, []);
 
 // temp=auth.currentUser;
   const toggleMenu = () => {

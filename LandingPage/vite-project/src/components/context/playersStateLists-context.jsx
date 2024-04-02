@@ -129,7 +129,7 @@ export function PlayersStateListsContextProvider({ children }) {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(async (user) => {
             if (user) {
-              console.log('user in the useeffect!!!!!!!!!!!!!!!!!',user);
+              console.log('user in the useffect',user); 
               // if(user.onlineState===false)
               // onlineStateToggle(user.displayName);
                 const { newOnlineList, newOfflineList } = await fetchUserData();

@@ -16,6 +16,8 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { UserContextProvider } from './components/context/user-context.jsx';
 import {CurrentUserContextProvider} from './components/context/currentuser-context.jsx';
 import {PlayersStateListsContextProvider} from './components/context/playersStateLists-context.jsx';
+import {SelectedUserContextProvider} from './components/context/selectedUser-context.jsx';
+import {ChatIdContextProvider} from './components/context/chatId-context.jsx';
 ////////////////////////////////////////////////////////////////////////////////
 // function checkUser() {
 //   firebase.auth().onAuthStateChanged((user) => {
@@ -51,11 +53,17 @@ root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
    <UserContextProvider>
+    <SelectedUserContextProvider>
      <CurrentUserContextProvider>
+        <ChatIdContextProvider>
        <PlayersStateListsContextProvider>
-         <App />
-       </PlayersStateListsContextProvider>
+        
+         <App/>
+    </PlayersStateListsContextProvider>
+    </ChatIdContextProvider>
+       
      </CurrentUserContextProvider>
+       </SelectedUserContextProvider>
    </UserContextProvider>
   </React.StrictMode>
 );

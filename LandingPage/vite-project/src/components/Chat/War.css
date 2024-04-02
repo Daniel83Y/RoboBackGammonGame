@@ -7,7 +7,7 @@
     border-radius: 0.375rem;
     
 }
-#root>div>div.parent-container {
+#chat-container>div.parent-container{
     background-image: url('https://firebasestorage.googleapis.com/v0/b/robobackgammon.appspot.com/o/a-ring-in-the-middle-two-exotic-small-robots-fighting-crowd-goes-crazy-blue-and-red-tones-a-few--376415089.jpg?alt=media&token=0a2457f0-4b64-4dc5-b901-e1ed156e2879');
     /* You can also specify additional properties like background size, repeat, position, etc. */
     background-size: cover;

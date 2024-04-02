@@ -1,0 +1,38 @@
+.chat-popup {
+    position: fixed;
+    /* Ensures that the popup stays fixed in the viewport */
+    top: 50px;
+    /* Adjust as needed to position the popup */
+    right: 50px;
+    /* Adjust as needed to position the popup */
+    width: 300px;
+    /* Adjust the width of the popup */
+    height: 400px;
+    /* Adjust the height of the popup */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    /* Ensures the popup is displayed above other content */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth opening/closing */
+}
+
+.chat-popup.open {
+    transform: translateX(0);
+    /* Slide in the popup when it's open */
+}
+
+.chat-popup-content {
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

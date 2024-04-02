@@ -10,7 +10,7 @@ import HomePage from './components/HomePage/HomePage.jsx';
 import LoggedInPage from './components/LoggedInPage/LoggedInPage.jsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import ChatProvider from './components/Chat/ChatComp.jsx';
+import ChatProvider from './components/Chat/ChatComp2.jsx';
 import {memo} from 'react'
 // import { UserContextProvider } from './components/context/user-context.jsx';
 // Initialize Firebase app
