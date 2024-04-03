@@ -4,7 +4,6 @@ import { memo } from 'react';
 import { useState,useContext } from 'react';
 import ChatPopup from '../Chat/ChatPopUp';
 
-import ChatProvider from '../Chat/ChatComp';
 import {SelectedUserContext} from '../context/selectedUser-context'
 
 function OnlineOfflineTable({ onlineList, offlineList  }) {
@@ -34,14 +33,18 @@ function OnlineOfflineTable({ onlineList, offlineList  }) {
     <div>
       <table className="table-fixed bg-zinc-600 text-white border-collapse border border-slate-500 border-solid drop-shadow-lg text-center place-items-center">
     <thead>
-        <tr className='flex flex-row justify-around space-x-16'>
-            <th className="text-3xl m-0.5 p-1 border border-slate-600 flex flex-row items-center">
-                <p>Online Players</p> 
+        <tr >
+            <th className="text-3xl m-0.5 p-1 border border-slate-600 ">
+              <div className='flex flex-row text-center align-items-center px-16' >
+                <p className='py-2'>Online Players</p> 
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1434fea2e92f9c0ad547d19b287e8172e6a25dd0cf3cddfb4bb0b0f5f3a51dfd?apiKey=1477cbc897df4fa28e1ddba6fd23de63" className="image size-14" alt="Online Players"/>
+                </div>
             </th> 
-            <th className="text-3xl m-0.5 p-1 border border-slate-600 flex flex-row items-center">
-                <p>Offline Players</p>
+            <th className="text-3xl m-0.5 p-1 border border-slate-600 ">
+               <div className='flex flex-row text-center align-items-center px-16'>
+                <p className='py-2'>Offline Players</p>
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ea41de6c61a8bba5e2c046f7faf78f588302e1263e4ad2ba09c74df20080f2b?apiKey=1477cbc897df4fa28e1ddba6fd23de63" className="image size-14" alt="Offline Players"/>
+                </div>
             </th>
         </tr>
         </thead>

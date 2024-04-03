@@ -89,7 +89,7 @@ main::-webkit-scrollbar-thumb {
 
 .messages-scroll {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 16px;
     
 }

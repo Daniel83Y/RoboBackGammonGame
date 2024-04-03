@@ -17,8 +17,6 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     background-color: white;
-    /* Set chat container background color to white */
-    /* Increased border-radius for rounded edges */
 }
 
 .Warcontainer {
@@ -27,10 +25,8 @@
     overflow: hidden;
     border: 1px solid #ccc;
     border-radius: 20px;
-    /* Increased border-radius for rounded edges */
 }
 
-/* Styles for the header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -38,12 +34,9 @@
     background-color: #000000;
     padding: 12px;
     border-top-left-radius: 20px;
-    /* Rounded top left corner */
     border-top-right-radius: 20px;
-    /* Rounded top right corner */
 }
 
-/* Styles for user information */
 .user-info {
     display: flex;
     align-items: center;
@@ -70,7 +63,6 @@
     border-radius: 8px;
 }
 
-/* Styles for the messages container */
 .messages-container {
     flex-grow: 1;
     overflow-y: auto;
@@ -85,23 +77,17 @@
 
 }
 
-/* Styles for individual messages */
-/* Styles for individual messages */
-/* Styles for individual messages */
 .message {
     font-size: 1.1rem;
     font-family: 'Rubik';
-    /* Add your desired font */
     position: relative;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 16px;
-    /* Increase the margin to create a bigger gap */
     min-width: 72px;
     max-width: 70%;
     word-wrap: break-word;
 
-    /* Adjust to fit 4 characters */
 }
 
 .timestamp {
@@ -112,7 +98,6 @@
     min-width: 40px;
     max-width: calc(100% - 8px);
     bottom: -20px;
-    /* Adjust as needed to prevent overflow */
 }
 
 .message+.message.user-message {
@@ -148,12 +133,9 @@
     background-color: #000000;
     padding: 12px;
     border-bottom-left-radius: 20px;
-    /* Rounded bottom left corner */
     border-bottom-right-radius: 20px;
-    /* Rounded bottom right corner */
 }
 
-/* Styles for the message input */
 .message-input {
     flex-grow: 1;
     padding: 12px;
@@ -165,7 +147,6 @@
 
 }
 
-/* Styles for the send button */
 .send-button {
     padding: 12px;
     background-color: #007bff;
@@ -174,7 +155,6 @@
     cursor: pointer;
 }
 
-/* Styles for the send icon */
 .send-icon {
     width: 24px;
     height: 24px;
