@@ -15,14 +15,7 @@ import {memo} from 'react'
 // import { UserContextProvider } from './components/context/user-context.jsx';
 // Initialize Firebase app
 const app = initializeApp({
-  apiKey: "AIzaSyCZ6pMdRgKENnl5mQdO3sHJnEz4rkNi9Lw",
-  authDomain: "robobackgammon.firebaseapp.com",
-  projectId: "robobackgammon",
-  databaseURL: "https://robobackgammon-default-rtdb.europe-west1.firebasedatabase.app",
-  storageBucket: "robobackgammon.appspot.com",
-  messagingSenderId: "684708662981",
-  appId: "1:684708662981:web:bc067d4f8bc5916f9e6aac",
-  measurementId: "G-46Q8BLR562"
+
 });
 
 // Initialize Firestore
