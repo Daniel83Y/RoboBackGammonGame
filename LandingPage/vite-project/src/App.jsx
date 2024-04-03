@@ -15,7 +15,7 @@ import {memo} from 'react'
 // import { UserContextProvider } from './components/context/user-context.jsx';
 // Initialize Firebase app
 const app = initializeApp({
-
+// deleted now for database protection 
 });
 
 // Initialize Firestore
